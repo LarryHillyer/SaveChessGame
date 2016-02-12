@@ -1,0 +1,265 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Board1="using:App2.Board1"
+    xmlns:Move1="using:App2.Move1"
+    x:Class="App2.MainPage"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="BorderBrush" Value="White" />
+        </Style>
+
+    </Page.Resources>
+
+    <Grid x:Name="ChessBoard" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid HorizontalAlignment="Center" Height="480" Margin="452,159,434,129" VerticalAlignment="Center" Width="480">
+            <Grid.Resources>
+                <Style TargetType="Image">
+                    <Setter Property="Width" Value="60" />
+                    <Setter Property="Height" Value="60" />
+                    <Setter Property="Grid.RowSpan" Value="1" />
+                    <Setter Property="Grid.ColumnSpan" Value="1" />
+                    <Setter Property="MinWidth" Value="60" />
+                    <Setter Property="MinHeight" Value="60" />
+                    <Setter Property="VerticalAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                    <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                </Style>
+
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="Box_11"  Grid.Row="0" Grid.Column="0" Source="Assets/BlackRookonWhiteSquare.png" />
+            <Image x:Name="Box_12"  Grid.Row="0" Grid.Column="1" Source="Assets/BlackKnightonBlackSquare.png" />
+            <Image x:Name="Box_13"  Grid.Row="0" Grid.Column="2" Source="Assets/BlackBishopOnWhiteSquare.png" />
+            <Image x:Name="Box_14"  Grid.Row="0" Grid.Column="3" Source="Assets/BlackQueenOnBlackSquare.png" />
+            <Image x:Name="Box_15"  Grid.Row="0" Grid.Column="4" Source="Assets/BlackKingOnWhiteSquare.png" />
+            <Image x:Name="Box_16"  Grid.Row="0" Grid.Column="5" Source="Assets/BlackBishopOnBlackSquare.png" />
+            <Image x:Name="Box_17"  Grid.Row="0" Grid.Column="6" Source="Assets/BlackKnightonWhiteSquare.png" />
+            <Image x:Name="Box_18"  Grid.Row="0" Grid.Column="7" Source="Assets/BlackRookonBlackSquare.png" />
+
+            <Image x:Name="Box_21"  Grid.Row="1" Grid.Column="0" Source="Assets/BlackPawnonBlackSquare.png" />
+            <Image x:Name="Box_22"  Grid.Row="1" Grid.Column="1" Source="Assets/BlackPawnonWhiteSquare.png" />
+            <Image x:Name="Box_23"  Grid.Row="1" Grid.Column="2" Source="Assets/BlackPawnonBlackSquare.png" />
+            <Image x:Name="Box_24"  Grid.Row="1" Grid.Column="3" Source="Assets/BlackPawnonWhiteSquare.png" />
+            <Image x:Name="Box_25"  Grid.Row="1" Grid.Column="4" Source="Assets/BlackPawnonBlackSquare.png" />
+            <Image x:Name="Box_26"  Grid.Row="1" Grid.Column="5" Source="Assets/BlackPawnonWhiteSquare.png" />
+            <Image x:Name="Box_27"  Grid.Row="1" Grid.Column="6" Source="Assets/BlackPawnonBlackSquare.png" />
+            <Image x:Name="Box_28"  Grid.Row="1" Grid.Column="7" Source="Assets/BlackPawnonWhiteSquare.png" />
+
+            <Image x:Name="Box_31"  Grid.Row="2" Grid.Column="0" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_32"  Grid.Row="2" Grid.Column="1" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_33"  Grid.Row="2" Grid.Column="2" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_34"  Grid.Row="2" Grid.Column="3" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_35"  Grid.Row="2" Grid.Column="4" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_36"  Grid.Row="2" Grid.Column="5" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_37"  Grid.Row="2" Grid.Column="6" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_38"  Grid.Row="2" Grid.Column="7" Source="Assets/BlackSquare.png" />
+
+            <Image x:Name="Box_41"  Grid.Row="3" Grid.Column="0" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_42"  Grid.Row="3" Grid.Column="1" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_43"  Grid.Row="3" Grid.Column="2" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_44"  Grid.Row="3" Grid.Column="3" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_45"  Grid.Row="3" Grid.Column="4" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_46"  Grid.Row="3" Grid.Column="5" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_47"  Grid.Row="3" Grid.Column="6" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_48"  Grid.Row="3" Grid.Column="7" Source="Assets/WhiteSquare.png"/>
+
+            <Image x:Name="Box_51"  Grid.Row="4" Grid.Column="0" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_52"  Grid.Row="4" Grid.Column="1" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_53"  Grid.Row="4" Grid.Column="2" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_54"  Grid.Row="4" Grid.Column="3" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_55"  Grid.Row="4" Grid.Column="4" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_56"  Grid.Row="4" Grid.Column="5" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_57"  Grid.Row="4" Grid.Column="6" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_58"  Grid.Row="4" Grid.Column="7" Source="Assets/BlackSquare.png"/>
+
+            <Image x:Name="Box_61"  Grid.Row="5" Grid.Column="0" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_62"  Grid.Row="5" Grid.Column="1" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_63"  Grid.Row="5" Grid.Column="2" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_64"  Grid.Row="5" Grid.Column="3" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_65"  Grid.Row="5" Grid.Column="4" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_66"  Grid.Row="5" Grid.Column="5" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_67"  Grid.Row="5" Grid.Column="6" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_68"  Grid.Row="5" Grid.Column="7" Source="Assets/WhiteSquare.png"/>
+
+            <Image x:Name="Box_71"  Grid.Row="6" Grid.Column="0" Source="Assets/WhitePawnonWhiteSquare.png"/>
+            <Image x:Name="Box_72"  Grid.Row="6" Grid.Column="1" Source="Assets/WhitePawnonBlackSquare.png"/>
+            <Image x:Name="Box_73"  Grid.Row="6" Grid.Column="2" Source="Assets/WhitePawnonWhiteSquare.png"/>
+            <Image x:Name="Box_74"  Grid.Row="6" Grid.Column="3" Source="Assets/WhitePawnonBlackSquare.png"/>
+            <Image x:Name="Box_75"  Grid.Row="6" Grid.Column="4" Source="Assets/WhitePawnonWhiteSquare.png"/>
+            <Image x:Name="Box_76"  Grid.Row="6" Grid.Column="5" Source="Assets/WhitePawnonBlackSquare.png"/>
+            <Image x:Name="Box_77"  Grid.Row="6" Grid.Column="6" Source="Assets/WhitePawnonWhiteSquare.png"/>
+            <Image x:Name="Box_78"  Grid.Row="6" Grid.Column="7" Source="Assets/WhitePawnonBlackSquare.png"/>
+
+            <Image x:Name="Box_81"  Grid.Row="7" Grid.Column="0" Source="Assets/WhiteRookonBlackSquare.png"/>
+            <Image x:Name="Box_82"  Grid.Row="7" Grid.Column="1" Source="Assets/WhiteKnightonWhiteSquare.png"/>
+            <Image x:Name="Box_83"  Grid.Row="7" Grid.Column="2" Source="Assets/WhiteBishopOnBlackSquare.png"/>
+            <Image x:Name="Box_84"  Grid.Row="7" Grid.Column="3" Source="Assets/WhiteQueenOnWhiteSquare.png"/>
+            <Image x:Name="Box_85"  Grid.Row="7" Grid.Column="4" Source="Assets/WhiteKingOnBlackSquare.png"/>
+            <Image x:Name="Box_86"  Grid.Row="7" Grid.Column="5" Source="Assets/WhiteBishopOnWhiteSquare.png"/>
+            <Image x:Name="Box_87"  Grid.Row="7" Grid.Column="6" Source="Assets/WhiteKnightonBlackSquare.png"/>
+            <Image x:Name="Box_88"  Grid.Row="7" Grid.Column="7" Source="Assets/WhiteRookonWhiteSquare.png"/>
+
+
+        </Grid>
+
+        <Button x:Name="changeTurn" Content="{Binding}" HorizontalAlignment="Left" Height="60" Margin="124,339,0,0" VerticalAlignment="Top" Width="247" IsEnabled="False" RenderTransformOrigin="0.5,0.5"/>
+
+        <TextBox x:Name="displayWhiteTurn" HorizontalAlignment="Left" Height="55" Margin="967,683,0,0" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="164" Foreground="Black" Background="White" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" FontSize="24" Padding="5" />
+        <TextBox x:Name="displayBlackTurn" HorizontalAlignment="Left" Height="55" Margin="1140,52,0,0" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="180"  Foreground="White" Background="Black" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" FontSize="24" Padding="5" />
+        <ListBox x:Name="displayWhiteMoves" Height="481" Margin="969,159,0,0" Width="162"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Background="White" BorderBrush="White" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding}"/>
+        <ListBox x:Name="displayBlackMoves" Height="481" Margin="1140,159,0,0" Width="180"  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="Black" BorderBrush="White" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding}"/>
+
+        <ToggleSwitch x:Name="boardRotation" Header="Rotate Board"  OffContent="Off" OnContent="On" HorizontalAlignment="Left" Height="55" Margin="167,419,0,0" VerticalAlignment="Top" Width="159" 
+                       IsOn="{Binding}" RenderTransformOrigin="0.5,0.5" FontFamily="Global User Interface"/>
+        <Grid x:Name="CapturedByOpponent" HorizontalAlignment="Left" Height="60" Margin="130,159,0,0" VerticalAlignment="Top" Width="240">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="Box_11C"  Grid.Row="0" Grid.Column="0" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_12C"  Grid.Row="0" Grid.Column="1" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_13C"  Grid.Row="0" Grid.Column="2" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_14C"  Grid.Row="0" Grid.Column="3" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_15C"  Grid.Row="0" Grid.Column="4" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_16C"  Grid.Row="0" Grid.Column="5" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_17C"  Grid.Row="0" Grid.Column="6" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_18C"  Grid.Row="0" Grid.Column="7" Source="Assets/BlackSquare.png"/>
+
+            <Image x:Name="Box_21C"  Grid.Row="1" Grid.Column="0" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_22C"  Grid.Row="1" Grid.Column="1" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_23C"  Grid.Row="1" Grid.Column="2" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_24C"  Grid.Row="1" Grid.Column="3" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_25C"  Grid.Row="1" Grid.Column="4" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_26C"  Grid.Row="1" Grid.Column="5" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_27C"  Grid.Row="1" Grid.Column="6" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_28C"  Grid.Row="1" Grid.Column="7" Source="Assets/WhiteSquare.png"/>
+
+
+        </Grid>
+        <Grid x:Name="CapturedByMe"  HorizontalAlignment="Left" Height="60" Margin="130,580,0,0" VerticalAlignment="Top" Width="240">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="30*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="Box_71C"  Grid.Row="0" Grid.Column="0" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_72C"  Grid.Row="0" Grid.Column="1" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_73C"  Grid.Row="0" Grid.Column="2" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_74C"  Grid.Row="0" Grid.Column="3" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_75C"  Grid.Row="0" Grid.Column="4" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_76C"  Grid.Row="0" Grid.Column="5" Source="Assets/BlackSquare.png"/>
+            <Image x:Name="Box_77C"  Grid.Row="0" Grid.Column="6" Source="Assets/WhiteSquare.png" />
+            <Image x:Name="Box_78C"  Grid.Row="0" Grid.Column="7" Source="Assets/BlackSquare.png"/>
+
+            <Image x:Name="Box_81C"  Grid.Row="1" Grid.Column="0" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_82C"  Grid.Row="1" Grid.Column="1" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_83C"  Grid.Row="1" Grid.Column="2" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_84C"  Grid.Row="1" Grid.Column="3" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_85C"  Grid.Row="1" Grid.Column="4" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_86C"  Grid.Row="1" Grid.Column="5" Source="Assets/WhiteSquare.png"/>
+            <Image x:Name="Box_87C"  Grid.Row="1" Grid.Column="6" Source="Assets/BlackSquare.png" />
+            <Image x:Name="Box_88C"  Grid.Row="1" Grid.Column="7" Source="Assets/WhiteSquare.png"/>
+
+        </Grid>
+        <TextBlock x:Name="txtOpponentName" HorizontalAlignment="Left" Height="62"  Margin="614,54,0,0" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="160" FontSize="30" TextAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="txtMyName" HorizontalAlignment="Left" Height="73" RenderTransformOrigin="0.5,0.5" Margin="612,665,0,0" TextWrapping="Wrap" Text="{Binding}" VerticalAlignment="Top" Width="160" FontSize="30" TextAlignment="Center"/>
+        <TextBlock x:Name="txtCapturedPieces" HorizontalAlignment="Left" Height="43" Margin="129,673,0,0" TextWrapping="Wrap" Text="Captured Pieces" VerticalAlignment="Top" Width="240" FontSize="30" TextAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+
+        <Button x:Name="NewGame" Content="{Binding}" HorizontalAlignment="Left" Height="46" Margin="124,251,0,0" VerticalAlignment="Top" Width="124" 
+                  RenderTransformOrigin="0.5,0.5" IsEnabled="True">
+            <Button.Flyout>
+                <Flyout>
+                    <Flyout.FlyoutPresenterStyle>
+                        <Style TargetType="FlyoutPresenter">
+                            <Setter Property="MinHeight" Value="500" />
+                            <Setter Property="MinWidth" Value="400" />
+                        </Style>
+                    </Flyout.FlyoutPresenterStyle>
+                    <StackPanel>
+                        <TextBlock x:Name="txtPlayer1" Text="Enter Player 1's Name" HorizontalAlignment="Center" />
+                        <TextBox x:Name="NamePlayer1"  Text="{Binding}" Height="40" Width="200" />
+                        <TextBlock x:Name="txtPlayer2" Text="Enter Player 2's Name" HorizontalAlignment="Center" />
+                        <TextBox x:Name="NamePlayer2"  Text="{Binding}" Height="40" Width="200" />
+                        <TextBlock x:Name="txtGameClockHours" Text="Enter Hours on Clock" HorizontalAlignment="Center" />
+                        <TextBox x:Name="GameClockHours" Text="1" Height="20" Width="20" />
+                        <TextBlock x:Name="txtGameClockMinutes" Text="Enter Minutes on Clock" HorizontalAlignment="Center" />
+                        <TextBox x:Name="GameClockMinutes" Text="30" Height="20" Width="20" />
+                        <ToggleSwitch x:Name="selectWhitePlayer" Header="Select White Player" OffContent="Player 1" OnContent="Player 2" HorizontalAlignment="Center" />
+                        <ToggleSwitch x:Name="changeTurnOnMoveLocationSelection" Header="Change Turn on Move Selection" OffContent="Off" OnContent="On" HorizontalAlignment="Center" IsOn="True"/>
+                        <ToggleSwitch x:Name ="Use_Clock" Header="Use Clock" OffContent="Off" OnContent="On" HorizontalAlignment="Center"/>
+
+                        <Button x:Name="startGame"  Content="Start Game" Click="startGame_Click"  Height="40" Width="160" HorizontalAlignment="Center" IsEnabled="True"/>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+
+        </Button>
+
+        <Button x:Name="Restart_Game" Content="Restart Game" HorizontalAlignment="Left" Height="46" Margin="245,251" VerticalAlignment="Top" Width="125" IsEnabled="True" RenderTransformOrigin="0.5,0.5" />
+        <Button x:Name="Save_Game" Content="Save Game" HorizontalAlignment="Left" Height="40" Margin="124,296,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" />
+        <Button x:Name="Replay_Game" Content="Replay Game" HorizontalAlignment="Left" Height="40" Margin="246,296,0,0" VerticalAlignment="Top" Width="124" RenderTransformOrigin="0.5,0.5" />
+        <TextBlock x:Name="ReplayGameLabel" HorizontalAlignment="Left" Height="38" Margin="149,484,0,0" TextWrapping="Wrap" Text="Replay Game" VerticalAlignment="Top" Width="200" FontSize="24" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" />
+        <Button x:Name="Replay_Reverse" Content="Reverse" HorizontalAlignment="Left" Height="40" Margin="127,528,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.5,0.5" />
+        <Button x:Name="Replay_Forward" Content="Forward" HorizontalAlignment="Left" Height="40" Margin="273,528,0,0" VerticalAlignment="Top" Width="97" RenderTransformOrigin="0.5,0.5" />
+
+
+        <TextBlock x:Name="Player1ClockDisplay" HorizontalAlignment="Center"  Height="40" Margin="812,682,434,46" VerticalAlignment="Center" Width="120" Text="{Binding}" RenderTransformOrigin="0.5,0.5" FontSize="24" TextAlignment="Center" />
+        <TextBlock x:Name="Player2ClockDisplay" HorizontalAlignment="Center" Height="40" Margin="812,60,434,668" VerticalAlignment="Center" Width="120" Text="{Binding}" RenderTransformOrigin="0.5,0.5" FontSize="24" TextAlignment="Center" />
+        <TextBlock x:Name="Player1Check"  HorizontalAlignment="Center" Height="50" Margin="452,681,808,47"  Text="{Binding}" VerticalAlignment="Center" Width="180" RenderTransformOrigin="0.5,0.5" FontSize="20" TextAlignment="Center"  />
+        <TextBlock x:Name="Player2Check"  HorizontalAlignment="Center" Height="50" Margin="415,57,771,661"  Text="{Binding}" VerticalAlignment="Center" Width="180" RenderTransformOrigin="0.5,0.5" FontSize="20" TextAlignment="Center" />
+
+        <TextBlock x:Name="MoveNumberLabel" Text="Move Number" HorizontalAlignment="Left" Height="40" Margin="130,76,0,0" TextWrapping="Wrap" FontSize="18" VerticalAlignment="Top" Width="120" TextAlignment="Center" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="MoveNumberBox" Text="{Binding}" HorizontalAlignment="Left" Height="40" Margin="276,71,0,0" TextWrapping="Wrap"  FontSize="24" VerticalAlignment="Top" Width="50" RenderTransformOrigin="0.5,0.5" TextAlignment="Center"/>
+
+
+    </Grid>
+</Page>
